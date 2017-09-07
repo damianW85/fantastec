@@ -1,0 +1,299 @@
+<!doctype html>
+<!--[if IE 9]>
+<html lang="en" class="ie ie9">
+<![endif]-->
+<!--[if lt IE 9]>
+<html lang="en" class="ie ie-legacy">
+<![endif]-->
+<html lang="en">
+	<head>
+		<title>Grunt Morgan Framework</title>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		<meta name="description" content="grunt boilerplate">
+		
+		<!-- viewport -->
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!-- Windows/IE font smoothing -->
+		<meta http-equiv="cleartype" content="on">
+
+		<!-- Use latest IE randering engine and switch on chrome Frame if available -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<!-- CSS -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,500" rel="stylesheet">
+
+		<link rel="stylesheet" href="css/main.css" />
+
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<![endif]-->
+		<script src='//api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js' charset='utf-8'></script>
+	  <script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
+		<script src="js/libs/jquery-3.2.1.min.js"></script>
+		<script src="js/libs/jquery.onepage-scroll.min.js"></script>
+
+	</head>
+	<body>
+
+		<div id="headerShape"></div>
+
+		<div id="scrollerWrapper">
+	    <section id="section1" class="page">
+	    	<video id="video" autoplay loop src="assets/videos/landingVideo.mp4"></video>
+	    </section>
+	    <section id="section2" class="page">
+	    	<div class="tint"></div>
+	    	<div id="section2Background" class="backgroundWrapper"></div>
+	    	<div class="textWrapper">
+	    		<h2 class="heading">about us</h2>
+	    		<p class="largeText">
+		    		Professional sport now enjoys a truly global following. Through technology our Fantastec goal is to enable ever richer more rewarding fan experiences.
+	    		</p>
+	    		<p>
+	    			Only 2% of the annual English Premier League audience experience a match from a stadium seat. Yet millions of fans the world over follow the action, the characters and the stories. 
+	    		</p>
+	    		<p>
+	    			Through emerging technologies like A.I, Virtual & Augmented Reality, wearable tech and the Blockchain, Fantastec is developing products, platforms and experiences so globally distanced fans can connect and engage more deeply with the sport they love.
+	    		</p>
+	    	</div>
+	    	
+	    </section>
+	    <section id="section3" class="page">
+	    	<div class="tint"></div>
+	    	<div id="section3Background0" class="backgroundWrapper"></div>
+	    	<div id="section3Background1" class="backgroundWrapper"></div>
+	    	<div id="section3Background2" class="backgroundWrapper"></div>
+	    	<h2 class="heading standAlone">how we innovate</h2>
+	    	<div class="textWrapper center">
+	    		<h2 class="heading"><!-- CONTENT GETS INJECTED FROM JS --></h2>
+	    		<p><!--CONTENT GETS INJECTED FROM JS --></p>
+	    	</div>
+	    		<!-- <div class="paginatorWrapper"> -->
+	    			<ul class="paginator custom">
+				    	<li><a data-index="2" class="section3PaginatorButton"></a></li>
+				    	<li><a data-index="1" class="section3PaginatorButton"></a></li>
+				    	<li><a data-index="0" class="section3PaginatorButton active"></a></li>
+			    	</ul>
+	    		<!-- </div> -->
+	    </section>
+	    <section id="section4" class="page">
+	    	<div class="tint"></div>
+	    	<div id="section4Background" class="backgroundWrapper"></div>
+	    	<div class="textWrapper">
+	    		<h2 class="heading">imagine if...</h2>
+	    		<p>
+		    		Imagine if a drone had sense and avoid technology that enabled it to safely zip between the cars on an F1 track, capturing the ultimate slow motion overtakes, without danger or distraction to the drivers.
+	    		</p>
+	    	</div>
+	    </section>
+	    <section id="section5" class="page">
+	    	<h2 class="heading standAlone">work with us</h2>
+
+	    	<div class="subSection" id="subSection1">
+		    	<div class="tint"></div>
+		    	<div id="subSection1Background" class="backgroundWrapper"></div>
+		    	<div class="textWrapper center">
+		    		<h2 class="heading clickableHeading">inspire</h2>
+		    		<p>
+		    			Do you have an idea, a vision or an aspiration you believe could revolutionise a sports experience for fans? Can you hook us in 50 words or less?
+		    		</p>
+		    	</div>
+		    </div>
+
+		    <div class="subSection" id="subSection2">
+		    	<div class="tint"></div>
+		    	<div id="subSection2Background" class="backgroundWrapper"></div>
+		    	<div class="textWrapper center">
+		    		<h2 class="heading clickableHeading">partner</h2>
+		    		<p>
+		    			Are you are an established start-up or small business with a technology or proof of concept that could benefit sports fans?
+		    		</p>
+		    	</div>
+		    </div>
+
+		    <div class="subSection" id="subSection3">
+		    	<div class="tint"></div>
+		    	<div id="subSection3Background" class="backgroundWrapper"></div>
+		    	<div class="textWrapper center">
+		    		<h2 class="heading clickableHeading">Join</h2>
+		    		<p>
+		    			Are you passionate about technology, sport, creativity and teamwork ? We’re looking for you people like you.
+		    		</p>
+		    	</div>
+		    </div>
+	    </section>
+	    <section id="section6" class="page">
+	    	<div class="tint"></div>
+	    	<div id="section6Background" style="width: 100vw; height: 100vh;"></div>
+	    </section>
+	  </div>
+	  <div id="footer">
+	  	<p> 
+		  	<b>FantastecHQ</b> @Fantastec • Aug 30 </br> Drones to play an active role in sport event management. <span class="greenText">#sporttech #futuresport #intelligence business.insider.com/BXTYN67tl... </span>
+	  	</p>
+	  	<div class="mediaWrapper">
+	  		<a class="twitter" href=""></a>
+	  		<a class="instagram" href=""></a>
+	  		<a class="linkedIn" href=""></a>
+	  	</div>
+	  </div>
+	  <div id="downArrow" class="arrow"></div>
+		<script>
+				mapboxgl.accessToken = 'pk.eyJ1IjoibXJhd2Vzb21lIiwiYSI6ImNqMzJzeDN4ZjAwMHAyd250YmRyZm04MDcifQ.YcsqDP3hqulR3f523AoB1g';
+
+				var bounds = [
+				    [-74.08633022449791, 40.67099989314178], // Southwest coordinates
+				    [-73.7202743886315, 40.893309881421345]  // Northeast coordinates
+				];
+
+				var map = new mapboxgl.Map({
+					container: 'section6Background',
+					center: [-0.612505206780952, 51.23910782724647],
+					zoom: 17,
+					// maxBounds: bounds,
+					pitch: 75,
+    			bearing: 15,
+    			minZoom: 12,
+					style: 'mapbox://styles/mapbox/dark-v9',
+					interactive: false
+				}).addControl(new mapboxgl.NavigationControl());
+
+				// function createLabel(locationObj) {
+						   
+			 //    var el = document.createElement('h4');
+			 //    el.className = 'label';
+			 //    el.id = locationObj.id;
+			 //    el.innerHTML = locationObj.heading;
+
+			 //    var el2 = document.createElement('p');
+			 //    el2.className = 'sub_label';
+			 //    el2.innerHTML = locationObj.text;
+
+			 //    el.appendChild(el2);
+
+			 //   	var marker = new mapboxgl.Marker(el);
+			 //   	markersArray.push(marker);
+			 //    marker.setLngLat(locationObj.center).addTo(map);
+				// }
+
+				function createMarker() {
+			    var el = $('<div class="marker"><div class="markerPoint"></div><h3>Fantastec</h3><p>Surrey Technology Centre </br> 40 Occam Road </br>Guildford Surrey </br> GU2 7YG</p><a href="">open in google maps</a><p>T +44(0)207654321</p><p>E hello@fantastec.io</p></div>').get(0);
+
+			    new mapboxgl.Marker(el, {offset: [100, 100]})
+		        .setLngLat([-0.611300206980952, 51.247110082724647])
+		        .addTo(map);
+				}
+				
+				createMarker();
+
+				map.on('load', function() {
+			    map.addLayer({
+			        'id': '3d-buildings',
+			        'source': 'composite',
+			        'source-layer': 'building',
+			        'filter': ['==', 'extrude', 'true'],
+			        'type': 'fill-extrusion',
+			        'minzoom': 4,
+			        'paint': {
+			            'fill-extrusion-color': '#676767',
+			            'fill-extrusion-height': {
+			                'type': 'identity',
+			                'property': 'height'
+			            },
+			            'fill-extrusion-base': {
+			                'type': 'identity',
+			                'property': 'min_height'
+			            },
+			            'fill-extrusion-opacity': 1
+			        }
+			    });
+
+			    // map.addLayer({
+		     //    'id': 'trumpBuilding',
+		     //    'source': 'composite',
+			    //   'source-layer': 'building',
+			    //   'filter': ["all",['==', 'height', 202]],
+		     //    'type': 'fill-extrusion',
+		     //    'paint': {
+		     //    	'fill-extrusion-color': '#FFD700',
+	      //       'fill-extrusion-height':  {
+       //          'type': 'identity',
+       //          'property': 'height'
+		     //      },
+		     //      'fill-extrusion-opacity': 1
+		     //    }
+		    	// });
+
+		    	// map.addLayer({
+		     //    'id': 'buildingCover',
+		     //    'type': 'fill-extrusion',
+		     //    'source': {
+		     //        'type': 'geojson',
+		     //        'data': {
+		     //            'type': 'Feature',
+		     //            'geometry': {
+		     //                'type': 'Polygon',
+		     //                'coordinates': [buildingCover]
+		     //            }
+		     //        }
+		     //    },
+		     //    'paint': {
+		     //    	'fill-extrusion-color': '#002a3d',
+	      //       'fill-extrusion-height': 202,
+		     //      'fill-extrusion-opacity': 1,
+		     //      'fill-extrusion-base': 0
+		     //    }
+		    	// });
+
+					// function pinSetup(locationObj) {
+
+					// 	$('#'+locationObj.id).html('')
+
+					// 		.css({'background-image':'url("NIO_MAP_PIN_2.svg")', 'height': '27px', 'width': '20px', 'background-size': '100%'})
+
+					// 		.click(function() {
+
+					// 			timeoutsArray.forEach(function(timOut) {
+									
+	  		// 					window.clearTimeout(timOut);
+	  		// 				});
+
+					// 			window.clearTimeout(rotatorResetTimeout);
+	  		// 				this.remove();
+
+	  		// 				if(animateStop === false) {
+
+	  		// 					goTo(locationObj);
+	  		// 					timeout8 = window.setTimeout(function() {
+
+				 //  					pinSetup(locationObj);
+				 //  					map.flyTo({center: [-74.0077331198848, 40.72457651621153], zoom: 12.5, duration: 3000, pitch: 60, bearing: 15});
+
+				 //  					rotatorReset(10000, rotator);
+
+				 //  				}, locationObj.duration + 3000);
+	  		// 				}
+	  		// 				timeoutsArray.push(timeout8);
+	  		// 			});
+					// }
+			});
+
+			</script>
+			<script src="js/app.js"> </script>
+		<!-- PRODUCTION ENVIRONNEMENT : 
+		<script src="js/libs/lib.min.js"></script>
+		<script src="js/all.min.js"></script> 
+		
+		<script>
+	    	window.onload = function() {
+	     		 app();
+	     	}
+	    </script>
+
+		-->
+
+		
+	</body>
+</html>
