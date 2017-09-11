@@ -1,3 +1,5 @@
+var mozjpeg = require('imagemin-mozjpeg');
+
 // Morgan VILLEDIEU This shows a full config file!
 module.exports = function(grunt) {
 
@@ -94,15 +96,36 @@ module.exports = function(grunt) {
 
         //Minify images
         imagemin: {
-            options: {
-                cache: false
-            },
-            dynamic: {
+            dev: {
+                options: {
+                    cache: false,
+                    optimizationLevel: 3,
+                    svgoPlugins: [{removeViewBox: false}],
+                    use: [mozjpeg({
+                        quality: 65
+                    })] // Example plugin usage
+                },
                 files: [{
-                   		expand: true,
-						cwd: '<%= paths.src %>',
-						src : '<%= files.images %>',
-						dest: '<%= paths.dev %>'
+                    expand: true,
+                    cwd: '<%= paths.src %>/assets/',
+                    src : '<%= files.images %>',
+                    dest: '<%= paths.dev %>'
+                }]
+            },
+            build: {
+                options: {
+                    cache: false,
+                    optimizationLevel: 3,
+                    svgoPlugins: [{removeViewBox: false}],
+                    use: [mozjpeg({
+                        quality: 65
+                    })] // Example plugin usage
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= paths.src %>/assets/',
+                    src : '<%= files.images %>',
+                    dest: '<%= paths.build %>'
                 }]
             }
         }, //end imagemin
@@ -277,6 +300,6 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ["dev"]);
 
     // dev and build tasks
-    grunt.registerTask('dev', 'Create the dev version of the website', ['clean:dev', 'copy:dev', 'browserify', 'sass:dev', 'newer:imagemin', "browserSync:dev", "manifest:dev", "watch"]);
-    grunt.registerTask('build', 'Create the production build version of the website', ['clean:build', 'imagemin', 'sass:build', 'copy:build', 'jshint', 'autoprefixer:build', 'concat', 'uglify', 'htmlmin:build', 'manifest:build']);
+    grunt.registerTask('dev', 'Create the dev version of the website', ['clean:dev', 'copy:dev', 'browserify', 'sass:dev', 'newer:imagemin:dev', "browserSync:dev", "manifest:dev", "watch"]);
+    grunt.registerTask('build', 'Create the production build version of the website', ['clean:build', 'imagemin:build', 'sass:build', 'copy:build', 'jshint', 'autoprefixer:build', 'concat', 'uglify', 'htmlmin:build', 'manifest:build']);
 };
