@@ -125,7 +125,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '<%= paths.src %>/assets/',
                     src : '<%= files.images %>',
-                    dest: '<%= paths.build %>'
+                    dest: '<%= paths.build %>/assets'
                 }]
             }
         }, //end imagemin
@@ -203,7 +203,7 @@ module.exports = function(grunt) {
         copy: {
             build: {
                 cwd: '<%= paths.src %>',
-                src: ['*'],
+                src: ['**/*', '!js/app.js'],
                 dest: '<%= paths.build %>',
                 expand: true
             },
