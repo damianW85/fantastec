@@ -7,7 +7,7 @@
 <![endif]-->
 <html lang="en">
 	<head>
-		<title>Grunt Morgan Framework</title>
+		<title>Fantastec</title>
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 		<meta name="description" content="grunt boilerplate">
 		
@@ -37,15 +37,34 @@
 	</head>
 	<body>
 
+		<div>
+			<button id="main-burger" class="burger">
+				<span class="burger__piece"></span>
+				<span class="burger__piece"></span>
+				<span class="burger__piece"></span>
+			</button>
+
+			<nav id="mainNav">
+				<a class="nav_link" data-index="1">home</a>
+				<a class="nav_link" data-index="2">about</a>
+				<a class="nav_link" data-index="3">innovate</a>
+				<a class="nav_link" data-index="4">imagine</a>
+				<a class="nav_link" data-index="5">work</a>
+				<a class="nav_link" data-index="6">contact</a>
+			</nav>
+		</div>
+
 		<div id="headerShape"></div>
 
 		<div id="scrollerWrapper">
-	    <section id="section1" class="page">
+	    <section data-index="1" id="section1" class="page">
 	    	<video id="video" autoplay loop src="assets/videos/landingVideo.mp4"></video>
 	    </section>
-	    <section id="section2" class="page">
+	    <section data-index="2" id="section2" class="page">
 	    	<div class="tint"></div>
-	    	<div id="section2Background" class="backgroundWrapper"></div>
+	    	<div id="section2Background0" class="backgroundWrapper"></div>
+	    	<div id="section2Background1" class="backgroundWrapper"></div>
+	    	<div id="section2Background2" class="backgroundWrapper"></div>
 	    	<div class="textWrapper">
 	    		<h2 class="heading">about us</h2>
 	    		<p class="largeText">
@@ -58,9 +77,8 @@
 	    			Through emerging technologies like A.I, Virtual & Augmented Reality, wearable tech and the Blockchain, Fantastec is developing products, platforms and experiences so globally distanced fans can connect and engage more deeply with the sport they love.
 	    		</p>
 	    	</div>
-	    	
 	    </section>
-	    <section id="section3" class="page">
+	    <section data-index="3" id="section3" class="page">
 	    	<div class="tint"></div>
 	    	<div id="section3Background0" class="backgroundWrapper"></div>
 	    	<div id="section3Background1" class="backgroundWrapper"></div>
@@ -70,76 +88,104 @@
 	    		<h2 class="heading"><!-- CONTENT GETS INJECTED FROM JS --></h2>
 	    		<p><!--CONTENT GETS INJECTED FROM JS --></p>
 	    	</div>
-	    		<!-- <div class="paginatorWrapper"> -->
-	    			<ul class="paginator custom">
-				    	<li><a data-index="2" class="section3PaginatorButton"></a></li>
-				    	<li><a data-index="1" class="section3PaginatorButton"></a></li>
-				    	<li><a data-index="0" class="section3PaginatorButton active"></a></li>
-			    	</ul>
-	    		<!-- </div> -->
+	    		
+  			<ul class="paginator custom">
+		    	<li><a data-index="2" class="section3PaginatorButton"></a></li>
+		    	<li><a data-index="1" class="section3PaginatorButton"></a></li>
+		    	<li><a data-index="0" class="section3PaginatorButton active"></a></li>
+	    	</ul>
+	    		
 	    </section>
-	    <section id="section4" class="page">
+	    <section data-index="4" id="section4" class="page">
 	    	<div class="tint"></div>
-	    	<div id="section4Background" class="backgroundWrapper"></div>
+	    	<div id="section4Background0" class="backgroundWrapper"></div>
+	    	<div id="section4Background1" class="backgroundWrapper"></div>
+	    	<div id="section4Background2" class="backgroundWrapper"></div>
+	    	<div id="section4Background3" class="backgroundWrapper"></div>
+	    	<div id="section4Background4" class="backgroundWrapper"></div>
+	    	<div id="section4Background5" class="backgroundWrapper"></div>
+
 	    	<div class="textWrapper">
-	    		<h2 class="heading">imagine if...</h2>
-	    		<p>
-		    		Imagine if a drone had sense and avoid technology that enabled it to safely zip between the cars on an F1 track, capturing the ultimate slow motion overtakes, without danger or distraction to the drivers.
-	    		</p>
+	    		<h2 class="heading"><!-- CONTENT GETS INJECTED FROM JS --></h2>
+	    		<p><!--CONTENT GETS INJECTED FROM JS --></p>
 	    	</div>
+
+	    	<ul class="paginator custom">
+	    		<li><a data-index="5" class="section4PaginatorButton"></a></li>
+		    	<li><a data-index="4" class="section4PaginatorButton"></a></li>
+	    		<li><a data-index="3" class="section4PaginatorButton"></a></li>
+		    	<li><a data-index="2" class="section4PaginatorButton"></a></li>
+		    	<li><a data-index="1" class="section4PaginatorButton"></a></li>
+		    	<li><a data-index="0" class="section4PaginatorButton active"></a></li>
+	    	</ul>
 	    </section>
-	    <section id="section5" class="page">
+	    <section data-index="5" id="section5" class="page">
 	    	<h2 class="heading standAlone">work with us</h2>
 
-	    	<div class="subSection" id="subSection1">
+	    	<div class="subSection clickable first" id="subSection1">
 		    	<div class="tint"></div>
 		    	<div id="subSection1Background" class="backgroundWrapper"></div>
 		    	<div class="textWrapper center">
-		    		<h2 class="heading clickableHeading">inspire</h2>
+		    		<h2 class="heading">inspire</h2>
 		    		<p>
 		    			Do you have an idea, a vision or an aspiration you believe could revolutionise a sports experience for fans? Can you hook us in 50 words or less?
 		    		</p>
+		    		<div class="button">hello</div>
 		    	</div>
 		    </div>
 
-		    <div class="subSection" id="subSection2">
+		    <div class="subSection clickable" id="subSection2">
 		    	<div class="tint"></div>
 		    	<div id="subSection2Background" class="backgroundWrapper"></div>
 		    	<div class="textWrapper center">
-		    		<h2 class="heading clickableHeading">partner</h2>
+		    		<h2 class="heading">partner</h2>
 		    		<p>
 		    			Are you are an established start-up or small business with a technology or proof of concept that could benefit sports fans?
 		    		</p>
-		    	</div>
+		    		<div class="button">hello</div>
 		    </div>
+		    	</div>
 
-		    <div class="subSection" id="subSection3">
+		    <div class="subSection clickable" id="subSection3">
 		    	<div class="tint"></div>
 		    	<div id="subSection3Background" class="backgroundWrapper"></div>
 		    	<div class="textWrapper center">
-		    		<h2 class="heading clickableHeading">Join</h2>
+		    		<h2 class="heading">Join</h2>
 		    		<p>
 		    			Are you passionate about technology, sport, creativity and teamwork ? We’re looking for you people like you.
 		    		</p>
+		    		<div class="button">hello</div>
 		    	</div>
 		    </div>
 	    </section>
-	    <section id="section6" class="page">
+	    <section data-index="6" id="section6" class="page">
 	    	<div class="tint"></div>
-	    	<div id="section6Background" style="width: 100vw; height: 100vh;"></div>
+	    	<div id="section6Background" class="backgroundWrapper" style="width: 100vw; height: 100vh;"></div>
 	    </section>
 	  </div>
 	  <div id="footer">
-	  	<p> 
+	  	<!-- <p> 
 		  	<b>FantastecHQ</b> @Fantastec • Aug 30 </br> Drones to play an active role in sport event management. <span class="greenText">#sporttech #futuresport #intelligence business.insider.com/BXTYN67tl... </span>
-	  	</p>
+	  	</p> -->
 	  	<div class="mediaWrapper">
-	  		<a class="twitter" href=""></a>
-	  		<a class="instagram" href=""></a>
-	  		<a class="linkedIn" href=""></a>
+	  		<a class="twitter" href="https://twitter.com/FantastecSport"></a>
+	  		<a class="instagram" href="https://www.instagram.com/fantastecsport"></a>
+	  		<a class="linkedIn" href="https://www.linkedin.com/company/fantastecsport"></a>
 	  	</div>
 	  </div>
 	  <div id="downArrow" class="arrow"></div>
+
+	  <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-106172674-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
 		<script>
 				mapboxgl.accessToken = 'pk.eyJ1IjoibXJhd2Vzb21lIiwiYSI6ImNqMzJzeDN4ZjAwMHAyd250YmRyZm04MDcifQ.YcsqDP3hqulR3f523AoB1g';
 
@@ -150,7 +196,7 @@
 
 				var map = new mapboxgl.Map({
 					container: 'section6Background',
-					center: [-0.612505206780952, 51.23910782724647],
+					center: [-0.611835206780952, 51.24011782724647],
 					zoom: 17,
 					// maxBounds: bounds,
 					pitch: 75,
@@ -179,10 +225,10 @@
 				// }
 
 				function createMarker() {
-			    var el = $('<div class="marker"><div class="markerPoint"></div><h3>Fantastec</h3><p>Surrey Technology Centre </br> 40 Occam Road </br>Guildford Surrey </br> GU2 7YG</p><a href="">open in google maps</a><p>T +44(0)207654321</p><p>E hello@fantastec.io</p></div>').get(0);
+			    var el = $('<div><div class="marker"><h3>Fantastec</h3><p>Surrey Technology Centre </br> 40 Occam Road </br>Guildford Surrey </br> GU2 7YG</p><a class="green" href="">open in google maps</a><p>T: +44(0)207654321</p><p>E: <a href="mailto:hello@fantastec.io">hello@fantastec.io</a></p></div><div class="markerPoint"></div></div>').get(0);
 
-			    new mapboxgl.Marker(el, {offset: [100, 100]})
-		        .setLngLat([-0.611300206980952, 51.247110082724647])
+			    new mapboxgl.Marker(el, {offset: [50, 50]})
+		        .setLngLat([-0.611800206980952, 51.243610082724647])
 		        .addTo(map);
 				}
 				
@@ -282,18 +328,8 @@
 
 			</script>
 			<script src="js/app.js"> </script>
-		<!-- PRODUCTION ENVIRONNEMENT : 
-		<script src="js/libs/lib.min.js"></script>
-		<script src="js/all.min.js"></script> 
-		
-		<script>
-	    	window.onload = function() {
-	     		 app();
-	     	}
-	    </script>
-
-		-->
-
-		
+		<!-- PRODUCTION ENVIRONNEMENT : -->
+		<!-- <script src="js/libs/lib.min.js"></script> -->
+		<!-- <script src="js/all.min.js"></script> -->
 	</body>
 </html>

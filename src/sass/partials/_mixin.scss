@@ -38,3 +38,21 @@
 @mixin respond-to($breakpoint) {
     @media all and (min-width: $breakpoint + px) { @content; }
 }
+
+@mixin breakpoint($point) {
+   @if $point == lrg-desktop {
+     @media (min-width: 1400px) { @content ; }
+  }
+   @else if $point == desktop {
+     @media (min-width: 800px) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 575px) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 425px)  { @content ; }
+  }
+  @else if $point == mobile {
+     @media (min-width: 300px)  { @content ; }
+  }
+}
