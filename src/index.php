@@ -1,3 +1,22 @@
+<?php
+	require_once('TwitterAPIExchange.php');
+	$settings = array(
+		'oauth_access_token' => "900023014695239681-pKx3SQW8DWON8RheKJyagcOIrYs1pSM",
+		'oauth_access_token_secret' => "hNnBHECW9FVdEaCw0iGdENSeLYxalZKSUHwQxGJgim9mD",
+		'consumer_key' => "2fhluqBiDRzQBLjisZtp8BUt1",
+		'consumer_secret' => "09Cv6Z8gUyqdXTUsyPQDXEKFYMgjbYgzXqex91dtyVGUdoGWdy"
+	);
+
+	$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+	$getfield = '?exclude_replies=true?screen_name=FantastecSport';
+	$requestMethod = 'GET';
+
+	$twitter = new TwitterAPIExchange($settings);
+	$userTweets = $twitter->setGetfield($getfield)
+	    ->buildOauth($url, $requestMethod)
+	    ->performRequest();
+?>
+
 <!doctype html>
 <!--[if IE 9]>
 <html lang="en" class="ie ie9">
@@ -170,9 +189,12 @@
 	    </section>
 	  </div>
 	  <div id="footer">
-	  	<!-- <p> 
-		  	<b>FantastecHQ</b> @Fantastec • Aug 30 </br> Drones to play an active role in sport event management. <span class="greenText">#sporttech #futuresport #intelligence business.insider.com/BXTYN67tl... </span>
-	  	</p> -->
+	  	<p> 
+	  		<?php $tweetWithHashtags = preg_replace('/(^|\s)#(\w*[a-zA-Z_]+\w*)/', '\1#<a class="greenText" href="https://twitter.com/search?q=%23\2">\2</a>', json_decode($userTweets)[0] -> text); ?>
+	  		<?php $item = explode(" ", json_decode($userTweets)[0] -> created_at); ?>
+		  	<b>FantastecHQ</b> @Fantastec • <?php echo $item[0], ' ', $item[1], ' ', $item[2] ?> </br> <?php print_r($tweetWithHashtags); ?>
+		  	<!-- <span class="greenText">#sporttech #futuresport #intelligence business.insider.com/BXTYN67tl... </span> -->
+	  	</p>
 	  	<div class="mediaWrapper">
 	  		<a class="twitter" href="https://twitter.com/FantastecSport"></a>
 	  		<a class="instagram" href="https://www.instagram.com/fantastecsport"></a>
