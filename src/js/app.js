@@ -46,6 +46,13 @@ const time = 750;
 
 $(document).ready(() => {
 
+	if(window.innerWidth < 800) {
+
+		$('#gfyCatEmbedIframe').ready(() => {
+			$('#loading').addClass('hidden');
+		});
+	}
+
 	const	pageLoader = (index) => {
 		if(index === 5) {
 			$('.tint').removeClass('removeTint');
@@ -61,7 +68,6 @@ $(document).ready(() => {
 			$('.tint').removeClass('removeTint');
 			$('.subSection').removeClass('scaleBackground');
 			$(`.backgroundWrapper:not(#section${index}Background)`).removeClass('scaleBackground');
-			// $(`#section${index}Background`).addClass('scaleBackground');
 			$(`#section${index}`).find(`.backgroundWrapper`).addClass('scaleBackground');
 			$(`#section${index}`).find('.tint').addClass('removeTint');
 		}
@@ -76,7 +82,6 @@ $(document).ready(() => {
 		});
 
 		$(`#section${sectionNumber}Background${idx}`).css({
-			'background-position': 'center center',
 			'transform': 'scale(1.1)',
 			'opacity': 1
 		});
@@ -195,18 +200,13 @@ $(document).ready(() => {
 	$('#downArrow').click(() => {
 		if(window.location.hash === '#6') {
 	  	$('#scrollerWrapper').moveTo(1);
-	  	// $('#downArrow').css({'transform': 'rotate(180deg)'});
 		} else {
 			$('#scrollerWrapper').moveDown();
-			// $('#downArrow').css({'transform': 'rotate(0deg)'});
-			// if(window.location.hash === '#0') {
-				
-			// }
 		}
 	});
 
 	setInterval(() => {
-		if(window.location.hash === '#1' || window.location.hash === '') {
+		if(window.location.hash === '#0' || window.location.hash === '') {
 			$('#headerShape, #footer').addClass('moveOffScreen');
 			$('#video').get(0).play();
 		} else {
@@ -215,6 +215,19 @@ $(document).ready(() => {
 				$('#video').get(0).pause();
 				clearTimeout(timeout);
 			}, time);
+		}
+
+		if($('#scrollerWrapper').offset().top < - (window.innerHeight * 4)) {
+			$('#downArrow').css({'transform': 'translateX(-50%) rotate(180deg)'});
+		} else {
+			$('#downArrow').css({'transform': 'translateX(-50%) rotate(0deg)'});
+		}
+
+		if(window.innerWidth > 800 && !$('#loading').hasClass('hidden')) {
+
+			if($('#video').get(0).readyState === 4) {
+				$('#loading').addClass('hidden');
+			}
 		}
 	}, 250);
 
