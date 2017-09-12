@@ -233,6 +233,14 @@ $stops3: (
 }
 
 .burger {
+  @include breakpoint(mobile) {
+    right: 29px;
+    top: 29px
+  }
+  @include breakpoint(tablet) {
+    right: 45px;
+    top: 45px
+  }
   transform: translateZ(0);
   $root: &;
   background: transparent;
@@ -245,8 +253,6 @@ $stops3: (
   margin-left: auto;
   outline: transparent;
   padding: 0;
-  right: 29px;
-  top: 29px;
   position: fixed;
   transition: transform .25s;
   width: 25px;
@@ -351,7 +357,7 @@ $stops3: (
 
 #mainNav {
   transform: translateZ(0);
-  width: 175px;
+  width: 50%;
   float: left;
   margin-left: 0px;
   display: block;
@@ -364,8 +370,13 @@ $stops3: (
   height: 100%;
 
   a {
+    @include breakpoint(mobile) {
+      margin: 7.5% 29px;
+    }
+    @include breakpoint(tablet) {
+      margin: 7.5% 45px;
+    }
     display: block;
-    margin: 7.5% 29px;
     height: 35px;
     text-decoration: none;
     color: #fff;
@@ -379,7 +390,7 @@ $stops3: (
 
 @include breakpoint(mobile) {
   #mainNav {
-    right: -175px;
+    right: -50%;
   }
 }
 
@@ -466,6 +477,12 @@ html, body, #scrollerWrapper {
     top: -435px;
     left: -168px;
   }
+  @include breakpoint(tablet) {
+    height: 750px;
+    width: 750px;
+    top: -650px;
+    left: -250px;
+  }
   @include breakpoint(desktop) {
     height: 1000px;
     width: 1000px;
@@ -487,6 +504,9 @@ html, body, #scrollerWrapper {
   &.moveOffScreen {   
     @include breakpoint(mobile) {
       transform: translateY(-65px);
+    }
+    @include breakpoint(tablet) {
+      transform: translateY(-100px);
     }
     @include breakpoint(desktop) {
       transform: translateY(-125px);
@@ -535,6 +555,9 @@ html, body, #scrollerWrapper {
       font-size: 1rem;
       top: 15%;
     }
+    @include breakpoint(tablet) {
+      left: 45px;
+    }
     @include breakpoint(desktop) {
       top: 20%;
       left: 60px;
@@ -560,6 +583,9 @@ html, body, #scrollerWrapper {
       left: 50%;
       top: 50%;
       text-align: left;
+    }
+    @include breakpoint(tablet) {
+      width: calc(100% - 90px);
     }
     @include breakpoint(desktop) {
       top: 20%;
@@ -971,6 +997,9 @@ html, body, #scrollerWrapper {
   @include breakpoint(mobile) {
     height: 45px;
   }
+  @include breakpoint(tablet) {
+    height: 60px;
+  }
   @include breakpoint(desktop) {
     height: 80px;
   }
@@ -985,6 +1014,9 @@ html, body, #scrollerWrapper {
   &.moveOffScreen {
     @include breakpoint(mobile) {
       transform: translateY(45px);
+    }
+    @include breakpoint(tablet) {
+      transform: translateY(60px);
     }
     @include breakpoint(desktop) {
       transform: translateY(80px);
@@ -1004,6 +1036,9 @@ html, body, #scrollerWrapper {
   .mediaWrapper {
     @include breakpoint(mobile) {
       right: 29px;
+    }
+    @include breakpoint(tablet) {
+      right: 45px;
     }
     @include breakpoint(desktop) {
       right: 60px;
@@ -1050,6 +1085,9 @@ html, body, #scrollerWrapper {
 .arrow {
   @include breakpoint(mobile) {
     height: 45px;
+  }
+  @include breakpoint(tablet) {
+    height: 60px;
   }
   @include breakpoint(desktop) {
     height: 80px;

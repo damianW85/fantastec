@@ -27,8 +27,24 @@
 <html lang="en">
 	<head>
 		<title>Fantastec</title>
-		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-		<meta name="description" content="grunt boilerplate">
+		<meta name="description" content="fantastec sport fan interaction">
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/images/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/images/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/images/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/images/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/images/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/images/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+		<link rel="manifest" href="js/libs/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="assets/images/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
 		
 		<!-- viewport -->
 		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -218,39 +234,19 @@
 				mapboxgl.accessToken = 'pk.eyJ1IjoibXJhd2Vzb21lIiwiYSI6ImNqMzJzeDN4ZjAwMHAyd250YmRyZm04MDcifQ.YcsqDP3hqulR3f523AoB1g';
 
 				var bounds = [
-				    [-74.08633022449791, 40.67099989314178], // Southwest coordinates
-				    [-73.7202743886315, 40.893309881421345]  // Northeast coordinates
+				    [-74.08633022449791, 40.67099989314178], 
+				    [-73.7202743886315, 40.893309881421345] 
 				];
 
 				var map = new mapboxgl.Map({
 					container: 'section6Background',
 					center: [-0.611835206780952, 51.24011782724647],
-					zoom: 17,
-					// maxBounds: bounds,
+					zoom: 16,
 					pitch: 75,
     			bearing: 15,
-    			minZoom: 12,
-					style: 'mapbox://styles/mapbox/dark-v9',
+					style: 'mapbox://styles/mrawesome/cj7hm5d2w4lkm2rp9t5z6ikv3',
 					interactive: false
 				}).addControl(new mapboxgl.NavigationControl());
-
-				// function createLabel(locationObj) {
-						   
-			 //    var el = document.createElement('h4');
-			 //    el.className = 'label';
-			 //    el.id = locationObj.id;
-			 //    el.innerHTML = locationObj.heading;
-
-			 //    var el2 = document.createElement('p');
-			 //    el2.className = 'sub_label';
-			 //    el2.innerHTML = locationObj.text;
-
-			 //    el.appendChild(el2);
-
-			 //   	var marker = new mapboxgl.Marker(el);
-			 //   	markersArray.push(marker);
-			 //    marker.setLngLat(locationObj.center).addTo(map);
-				// }
 
 				function createMarker() {
 			    var el = $('<div><div class="marker"><h3>Fantastec</h3><p>Surrey Technology Centre </br> 40 Occam Road </br>Guildford Surrey </br> GU2 7YG</p><a class="green" href="">open in google maps</a><p>T: +44(0)207654321</p><p>E: <a href="mailto:hello@fantastec.io">hello@fantastec.io</a></p></div><div class="markerPoint"></div></div>').get(0);
@@ -283,75 +279,6 @@
 			            'fill-extrusion-opacity': 1
 			        }
 			    });
-
-			    // map.addLayer({
-		     //    'id': 'trumpBuilding',
-		     //    'source': 'composite',
-			    //   'source-layer': 'building',
-			    //   'filter': ["all",['==', 'height', 202]],
-		     //    'type': 'fill-extrusion',
-		     //    'paint': {
-		     //    	'fill-extrusion-color': '#FFD700',
-	      //       'fill-extrusion-height':  {
-       //          'type': 'identity',
-       //          'property': 'height'
-		     //      },
-		     //      'fill-extrusion-opacity': 1
-		     //    }
-		    	// });
-
-		    	// map.addLayer({
-		     //    'id': 'buildingCover',
-		     //    'type': 'fill-extrusion',
-		     //    'source': {
-		     //        'type': 'geojson',
-		     //        'data': {
-		     //            'type': 'Feature',
-		     //            'geometry': {
-		     //                'type': 'Polygon',
-		     //                'coordinates': [buildingCover]
-		     //            }
-		     //        }
-		     //    },
-		     //    'paint': {
-		     //    	'fill-extrusion-color': '#002a3d',
-	      //       'fill-extrusion-height': 202,
-		     //      'fill-extrusion-opacity': 1,
-		     //      'fill-extrusion-base': 0
-		     //    }
-		    	// });
-
-					// function pinSetup(locationObj) {
-
-					// 	$('#'+locationObj.id).html('')
-
-					// 		.css({'background-image':'url("NIO_MAP_PIN_2.svg")', 'height': '27px', 'width': '20px', 'background-size': '100%'})
-
-					// 		.click(function() {
-
-					// 			timeoutsArray.forEach(function(timOut) {
-									
-	  		// 					window.clearTimeout(timOut);
-	  		// 				});
-
-					// 			window.clearTimeout(rotatorResetTimeout);
-	  		// 				this.remove();
-
-	  		// 				if(animateStop === false) {
-
-	  		// 					goTo(locationObj);
-	  		// 					timeout8 = window.setTimeout(function() {
-
-				 //  					pinSetup(locationObj);
-				 //  					map.flyTo({center: [-74.0077331198848, 40.72457651621153], zoom: 12.5, duration: 3000, pitch: 60, bearing: 15});
-
-				 //  					rotatorReset(10000, rotator);
-
-				 //  				}, locationObj.duration + 3000);
-	  		// 				}
-	  		// 				timeoutsArray.push(timeout8);
-	  		// 			});
-					// }
 			});
 
 			</script>
