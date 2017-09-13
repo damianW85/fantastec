@@ -73,6 +73,7 @@
 	<body>
 
 		<div id="loading"></div>
+		<div id="menuBlockOut" class="hidden"></div>
 
 		<div>
 			<button id="main-burger" class="burger">
@@ -208,8 +209,7 @@
 	  	<p> 
 	  		<?php $tweetWithHashtags = preg_replace('/(^|\s)#(\w*[a-zA-Z_]+\w*)/', '\1#<a class="greenText" href="https://twitter.com/search?q=%23\2">\2</a>', json_decode($userTweets)[0] -> text); ?>
 	  		<?php $item = explode(" ", json_decode($userTweets)[0] -> created_at); ?>
-		  	<b>FantastecHQ</b> @Fantastec • <?php echo $item[0], ' ', $item[1], ' ', $item[2] ?> </br> <?php print_r($tweetWithHashtags); ?>
-		  	<!-- <span class="greenText">#sporttech #futuresport #intelligence business.insider.com/BXTYN67tl... </span> -->
+		  	<b>FantastecHQ @Fantastec • <?php echo $item[0], ' ', $item[1], ' ', $item[2] ?> <?php print_r($tweetWithHashtags); ?>
 	  	</p>
 	  	<div class="mediaWrapper">
 	  		<a class="twitter" href="https://twitter.com/FantastecSport"></a>
@@ -240,19 +240,19 @@
 
 				var map = new mapboxgl.Map({
 					container: 'section6Background',
-					center: [-0.611835206780952, 51.24011782724647],
-					zoom: 16,
-					pitch: 75,
+					center: [-0.611835206780952, 51.24045782724647],
+					zoom: 16.5,
+					pitch: 65,
     			bearing: 15,
 					style: 'mapbox://styles/mrawesome/cj7hm5d2w4lkm2rp9t5z6ikv3',
 					interactive: false
 				}).addControl(new mapboxgl.NavigationControl());
 
 				function createMarker() {
-			    var el = $('<div><div class="marker"><h3>Fantastec</h3><p>Surrey Technology Centre </br> 40 Occam Road </br>Guildford Surrey </br> GU2 7YG</p><a class="green" href="">open in google maps</a><p>T: +44(0)207654321</p><p>E: <a href="mailto:hello@fantastec.io">hello@fantastec.io</a></p></div><div class="markerPoint"></div></div>').get(0);
+			    var el = $('<div><div class="marker"><h3>Fantastec</h3><p>Surrey Technology Centre </br> 40 Occam Road </br>Guildford Surrey </br> GU2 7YG</p><a class="green" href="https://www.google.com/maps/place/Surrey+Research+Park/@51.2396613,-0.6142707,17z/data=!4m5!3m4!1s0x0:0x632d0439c869347!8m2!3d51.2398362!4d-0.6120311">open in google maps</a><p>T: <a href="tel:+44-207-654-321">+44(0)207654321</a></p><p>E: <a href="mailto:hello@fantastec.io">hello@fantastec.io</a></p></div><div class="markerPoint"></div></div>').get(0);
 
 			    new mapboxgl.Marker(el, {offset: [50, 50]})
-		        .setLngLat([-0.611800206980952, 51.243610082724647])
+		        .setLngLat([-0.611500906980952, 51.244910082724647])
 		        .addTo(map);
 				}
 				
