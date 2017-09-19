@@ -92,6 +92,7 @@ $grey: #333333;
 
 $scale: scale;
 $pulse: pulse;
+$bigPulse: bigPulse;
 $moveUp: moveUp;
 $fadeIn: fadeIn;
 
@@ -112,10 +113,11 @@ $stops3: (
   100%: translateY(0)
 );
 
-// $stops4: (
-//   0%: 0,
-//   100%: 1
-// );
+$stops4: (
+  0%: scale(1) translateX(-50%),
+  50%: scale(1.25) translateX(-50%),
+  100%: scale(1) translateX(-50%)
+);
 
 // // Where action happens
 // @mixin keyframe-generator($map, $name){
@@ -141,6 +143,7 @@ $stops3: (
 @include keyframe-generator($stops, $scale);
 @include keyframe-generator($stops3, $moveUp);
 @include keyframe-generator($stops2, $pulse);
+@include keyframe-generator($stops4, $bigPulse);
 
 .scaleBackground {
   animation: scale 1s ease-out forwards;
@@ -236,6 +239,10 @@ $stops3: (
 }
 
 .paginator.custom {
+  &.landscape {
+    top: calc(100% - 100px);
+  }
+
   @extend .onepage-pagination;
 
   @include breakpoint(mobile) {
@@ -395,6 +402,10 @@ $stops3: (
     @include breakpoint(tablet) {
       margin: 7.5% 45px;
     }
+
+    &.landscape {
+      height: 16px;
+    }
     display: block;
     height: 35px;
     text-decoration: none;
@@ -429,6 +440,11 @@ $stops3: (
 }
 
 .marker {
+  &.landscape {
+    &:after {
+      display: none;
+    }
+  }
   @include breakpoint(mobile) {
     height: 250px;
     width: 200px;
@@ -513,9 +529,14 @@ html, body, #scrollerWrapper {
   height: 100%;
   width: 100%;
   background-color: $grey;
+  max-width: 2600px;
+  margin: 0 auto;
 }
 
 #headerShape {
+  &.landscape {
+    display: none;
+  }
   will-change: transform, top, left, height, width;
   pointer-events: none;
   @include breakpoint(mobile) {
@@ -622,6 +643,11 @@ html, body, #scrollerWrapper {
   }
   overflow: hidden;
   .textWrapper {
+    &.landscape {
+      p {
+        width: 100%;
+      }
+    }
     will-change: transform, top, left;
     transform: translateZ(0);
     position: absolute;
@@ -792,6 +818,9 @@ html, body, #scrollerWrapper {
 
   .paginator.custom {
     top: calc(100% - 185px);
+    &.landscape {
+      top: calc(100% - 140px);
+    }
   }
 
   .backgroundWrapper {
@@ -846,6 +875,24 @@ html, body, #scrollerWrapper {
 }
 
 #section5 {
+  &.landscape {
+    flex-direction: row;
+    .subSection {
+      width: 33.333333333%;
+      height: 100%;
+      &.first {
+        height: 100%;
+      }
+      &.open {
+        width: 60%;
+        height: 100%;
+      }
+      &.closed {
+        width: 20%;
+        height: 100%;
+      }
+    }
+  }
   @include breakpoint(mobile) {
     flex-direction: column;
   }
@@ -957,7 +1004,7 @@ html, body, #scrollerWrapper {
           top: 50%;
         }
         @include breakpoint(desktop) {
-          top: calc(50% - 100px);
+          top: calc(50% - 110px);
         }
         opacity: 0;
         position: relative;
@@ -1065,6 +1112,9 @@ html, body, #scrollerWrapper {
 }
 
 #footer {
+  &.landscape {
+    display: none;
+  }
   will-change: transform;
   transform: translateZ(0);
   @include breakpoint(mobile) {
@@ -1101,16 +1151,17 @@ html, body, #scrollerWrapper {
       margin: 0 0 0 29px;
       width: calc(50% - 58px);
       font-size: 0.5rem;
+      font-weight: 100;
     }
     @include breakpoint(tablet) {
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       width: calc(50% - 90px);
       margin: 0 0 0 45px;
     }
     @include breakpoint(desktop) {
       margin: 0 0 0 60px;
       width: calc(50% - 120px);
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
     color: $white;
     font-weight: 100;
@@ -1183,8 +1234,10 @@ html, body, #scrollerWrapper {
   @include breakpoint(desktop) {
     height: 80px;
   }
-
+  
+  will-change: transform;
   transform: translateZ(0);
+  transform-origin: 0;
   bottom: 0;
   z-index: 3;
   position: absolute;
@@ -1195,4 +1248,7 @@ html, body, #scrollerWrapper {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  &.pulsate {
+    animation: bigPulse 1s ease-out infinite;
+  }
 }

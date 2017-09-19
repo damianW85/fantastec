@@ -27,7 +27,8 @@
 <html lang="en">
 	<head>
 		<title>Fantastec</title>
-		<meta name="description" content="fantastec sport fan interaction">
+		<meta name="description" content="fantastec sport fan engagement innovating">
+		<meta name="keywords" content="fantastec sport fan engagement innovating">
 		<link rel="apple-touch-icon" sizes="57x57" href="assets/images/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="assets/images/apple-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-icon-72x72.png">
@@ -113,7 +114,7 @@
 		    		Professional sport now enjoys a truly global following. Through technology our Fantastec goal is to enable ever richer more rewarding fan experiences.
 	    		</p>
 	    		<p>
-	    			Only 0.5% of the annual English Premier League audience experience a match from a stadium seat. Yet millions of fans the world over follow the action, the characters and the stories. 
+	    			Only 0.5% of the annual English Premier League audience experience a match from a stadium seat. Yet billions of fans the world over follow the action, the characters and the stories. 
 	    		</p>
 	    		<p>
 	    			Through emerging technologies like A.I, Virtual & Augmented Reality, wearable tech and the Blockchain, Fantastec is developing products, platforms and experiences so globally distanced fans can connect and engage more deeply with the sport they love.
@@ -194,7 +195,7 @@
 		    	<div class="textWrapper center">
 		    		<h2 class="heading">Join</h2>
 		    		<p>
-		    			Are you passionate about technology, sports, creativity and teamwork ? We’re looking for you people like you.
+		    			Are you passionate about technology, sports, creativity and teamwork? We’re looking for people like you.
 		    		</p>
 		    		<a class="button" href="mailto:hello@fantastec.io">hello</a>
 		    	</div>
@@ -209,7 +210,7 @@
 	  	<p> 
 	  		<?php $tweetWithHashtags = preg_replace('/(^|\s)#(\w*[a-zA-Z_]+\w*)/', '\1#<a class="greenText" href="https://twitter.com/search?q=%23\2">\2</a>', json_decode($userTweets)[0] -> text); ?>
 	  		<?php $item = explode(" ", json_decode($userTweets)[0] -> created_at); ?>
-		  	<b>FantastecHQ @Fantastec • <?php echo $item[0], ' ', $item[1], ' ', $item[2] ?> <?php print_r($tweetWithHashtags); ?>
+		  	@FantastecSport • <?php echo $item[0], ' ', $item[1], ' ', $item[2] ?> <?php print_r($tweetWithHashtags); ?>
 	  	</p>
 	  	<div class="mediaWrapper">
 	  		<a class="twitter" href="https://twitter.com/FantastecSport"></a>
