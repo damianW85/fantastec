@@ -2,12 +2,12 @@ const section3Data = [
 {
 		position: 'center',
 		heading: 'Create',
-		text: 'We are a collective of data scientists, tech engineers and creative pioneers who have cultivated world class experience in sports. Our fan insights inspire technology led ideas brought to life through our products, platforms and service-led experiences.'
+		text: 'We are a collective of data scientists, tech engineers and creative pioneers who have cultivated world class experience in sports. Our fan insights inspire technology-led ideas brought to life through our products, platforms and service-led experiences.'
 },
 {
 		position: 'center',
 		heading: 'Curate',
-		text: 'We identify, incubate and accelerate technology based start-ups to create disruptive sport concepts for global sports fans.'
+		text: 'We identify, incubate and accelerate technology-based start-ups to create disruptive sport concepts for global sports fans.'
 }, 
 {
 		position: 'center',
@@ -21,11 +21,11 @@ const section4Data = [
 		heading: 'Imagine if...'
 	},
 	{
-		text: '... Football clubs used wearable tech to select its teams not only based its players physical performance in training, but on their mental preparedness.',
+		text: '... Football clubs used wearable tech to select its teams not only based on its players physical performance in training, but on their mental preparedness.',
 		heading: 'Imagine if...'
 	}, 
 	{
-		text: '... An A.I. chatbot who’s deep learning was so in touch with sport that it could serve up a series of informed opinions about any game, player or tournament you asked of it. Bet you’d have fun with that.',
+		text: '... An A.I. chatbot whose deep learning was so in touch with sport that it could serve up a series of informed opinions about any game, player or tournament you asked of it. Bet you’d have fun with that.',
 		heading: 'Imagine if...'
 	},
 	{
@@ -73,8 +73,8 @@ $(document).ready(() => {
 			$('.tint').removeClass('removeTint');
 			$('.subSection').removeClass('scaleBackground');
 			$(`.backgroundWrapper:not(#section${index}Background)`).removeClass('scaleBackground');
-			$(`#section${index}`).find(`.backgroundWrapper`).addClass('scaleBackground');
-			$(`#section${index}`).find('.tint').addClass('removeTint');
+			$(`.section.active`).find(`.backgroundWrapper`).addClass('scaleBackground');
+			$(`section.active`).find('.tint').addClass('removeTint');
 		}
 	};
 
@@ -112,9 +112,6 @@ $(document).ready(() => {
 		populateSection(2, section2ImageIdx, null);
 		
 		setTimeout(() => {
-			// pageLoader(2);
-			// $(`.backgroundWrapper:not(#section2Background)`).removeClass('scaleBackground');
-			// $(`#section${index}Background`).addClass('scaleBackground');
 			$(`#section2`).find(`.backgroundWrapper`).addClass('scaleBackground');
 			$(`#section2`).find('.tint').addClass('removeTint');
 		}, 500);
@@ -230,6 +227,31 @@ $(document).ready(() => {
 		}
 	});
 
+	let section3Automated, automateSection3, section4Automated, automateSection4;
+
+	const intervalManager = (flag, sectionId, time) => {
+   	if(flag) {
+   		if(sectionId === 'section3') {
+   			automateSection3 = setInterval(() => {
+	     		swipeController(sectionId, 'l');	
+	     	}, time);
+   		}
+   		if(sectionId === 'section4') {
+   			automateSection4 = setInterval(() => {
+	     		swipeController(sectionId, 'l');	
+	     	}, time);
+   		}
+     	 
+   	} else {
+   		if(sectionId === 'section3') {
+    		clearInterval(automateSection3);
+    	}
+    	if(sectionId === 'section4') {
+    		clearInterval(automateSection4);
+    	}
+   	}
+	};
+
 	setInterval(() => {
 		if($('#scrollerWrapper').offset().top >= 0) {
 			$('#headerShape, #footer').addClass('moveOffScreen');
@@ -261,7 +283,31 @@ $(document).ready(() => {
 		} else {
 			 $('.nav_link, #headerShape, #footer, .custom, .marker, #section5, .textWrapper').removeClass('landscape');
 		}
-	}, 250);
+
+		if($('#section3.active').length) {
+			if(section3Automated !== true) {
+				section3Automated = true;
+				intervalManager(true, 'section3', 7000);
+			}
+		} else {
+			if(section3Automated === true) {
+				intervalManager(false, 'section3');
+				section3Automated = false;
+			}
+		}
+
+		if($('#section4.active').length) {
+			if(section4Automated !== true) {
+				section4Automated = true;
+				intervalManager(true, 'section4', 7000);
+			}
+		} else {
+			if(section4Automated === true) {
+				intervalManager(false, 'section4');
+				section4Automated = false;
+			}
+		}
+	}, 500);
 
 
 	$('.nav_link').click((e) => {
@@ -406,5 +452,3 @@ $(document).ready(() => {
 	detectswipe('section4', swipeController);
 	detectswipe('section3', swipeController);
 });
-
-

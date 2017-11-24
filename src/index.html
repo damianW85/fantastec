@@ -1,22 +1,3 @@
-<?php
-	require_once('TwitterAPIExchange.php');
-	$settings = array(
-		'oauth_access_token' => "900023014695239681-pKx3SQW8DWON8RheKJyagcOIrYs1pSM",
-		'oauth_access_token_secret' => "hNnBHECW9FVdEaCw0iGdENSeLYxalZKSUHwQxGJgim9mD",
-		'consumer_key' => "2fhluqBiDRzQBLjisZtp8BUt1",
-		'consumer_secret' => "09Cv6Z8gUyqdXTUsyPQDXEKFYMgjbYgzXqex91dtyVGUdoGWdy"
-	);
-
-	$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-	$getfield = '?exclude_replies=true?screen_name=FantastecSport';
-	$requestMethod = 'GET';
-
-	$twitter = new TwitterAPIExchange($settings);
-	$userTweets = $twitter->setGetfield($getfield)
-	    ->buildOauth($url, $requestMethod)
-	    ->performRequest();
-?>
-
 <!doctype html>
 <!--[if IE 9]>
 <html lang="en" class="ie ie9">
@@ -114,10 +95,10 @@
 		    		Professional sport now enjoys a truly global following. Through technology our Fantastec goal is to enable ever richer more rewarding fan experiences.
 	    		</p>
 	    		<p>
-	    			Only 0.5% of the annual English Premier League audience experience a match from a stadium seat. Yet billions of fans the world over follow the action, the characters and the stories. 
+	    			Only 0.5% of the annual English Premier League audience experience a match from a stadium seat. Yet billions of fans around the world follow the action, the characters and the stories. 
 	    		</p>
 	    		<p>
-	    			Through emerging technologies like A.I, Virtual & Augmented Reality, wearable tech and the Blockchain, Fantastec is developing products, platforms and experiences so globally distanced fans can connect and engage more deeply with the sport they love.
+	    			Through emerging technologies like virtual & augmented reality, wearable tech, A.I and the Blockchain, Fantastec is developing products, platforms and experiences so globally distanced fans can connect and engage more deeply with the sport they love.
 	    		</p>
 	    	</div>
 	    </section>
@@ -183,7 +164,7 @@
 		    	<div class="textWrapper center">
 		    		<h2 class="heading">partner</h2>
 		    		<p>
-		    			Are you are an established start-up or small business with a technology or proof of concept that could benefit sports fans?
+		    			Are you an established start-up or small business with a technology or proof of concept that could benefit sports fans?
 		    		</p>
 		    		<a class="button" href="mailto:hello@fantastec.io">hello</a>
 		    </div>
@@ -207,15 +188,10 @@
 	    </section>
 	  </div>
 	  <div id="footer">
-	  	<p> 
-	  		<?php $tweetWithHashtags = preg_replace('/(^|\s)#(\w*[a-zA-Z_]+\w*)/', '\1#<a class="greenText" href="https://twitter.com/search?q=%23\2">\2</a>', json_decode($userTweets)[0] -> text); ?>
-	  		<?php $item = explode(" ", json_decode($userTweets)[0] -> created_at); ?>
-		  	@FantastecSport • <?php echo $item[0], ' ', $item[1], ' ', $item[2] ?> <?php print_r($tweetWithHashtags); ?>
-	  	</p>
 	  	<div class="mediaWrapper">
-	  		<a class="twitter" href="https://twitter.com/FantastecSport"></a>
-	  		<a class="instagram" href="https://www.instagram.com/fantastecsport"></a>
-	  		<a class="linkedIn" href="https://www.linkedin.com/company/fantastecsport"></a>
+	  		<a class="twitter" target="_blank" href="https://twitter.com/FantastecSport"></a>
+	  		<a class="instagram" target="_blank" href="https://www.instagram.com/fantastecsport"></a>
+	  		<a class="linkedIn" target="_blank" href="https://www.linkedin.com/company/fantastecsport"></a>
 	  	</div>
 	  </div>
 	  <div id="downArrow" class="arrow"></div>
@@ -250,7 +226,7 @@
 				}).addControl(new mapboxgl.NavigationControl());
 
 				function createMarker() {
-			    var el = $('<div><div class="marker"><h3>Fantastec</h3><p>Surrey Technology Centre </br> 40 Occam Road </br>Guildford Surrey </br> GU2 7YG</p><a class="green" href="https://www.google.com/maps/place/Surrey+Research+Park/@51.2396613,-0.6142707,17z/data=!4m5!3m4!1s0x0:0x632d0439c869347!8m2!3d51.2398362!4d-0.6120311">open in google maps</a><p>T: <a href="tel:+44-207-654-321">+44(0)207654321</a></p><p>E: <a href="mailto:hello@fantastec.io">hello@fantastec.io</a></p></div><div class="markerPoint"></div></div>').get(0);
+			    var el = $('<div><div class="marker"><h3>Fantastec</h3><p>Surrey Technology Centre </br> 40 Occam Road </br>Guildford Surrey </br> GU2 7YG</p><a class="green" target="_blank" href="https://www.google.com/maps/place/Surrey+Research+Park/@51.2396613,-0.6142707,17z/data=!4m5!3m4!1s0x0:0x632d0439c869347!8m2!3d51.2398362!4d-0.6120311">open in google maps</a><p>T: <a href="tel:+44-148-368-8309">+44(0)1483 688309</a></p><p>T: <a href="tel:+44-148-368-8186">+44(0)1483 688186</a></p><p>E: <a href="mailto:hello@fantastec.io">hello@fantastec.io</a></p></div><div class="markerPoint"></div></div>').get(0);
 
 			    new mapboxgl.Marker(el, {offset: [50, 50]})
 		        .setLngLat([-0.611500906980952, 51.244910082724647])

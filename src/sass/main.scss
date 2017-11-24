@@ -446,7 +446,7 @@ $stops4: (
     }
   }
   @include breakpoint(mobile) {
-    height: 250px;
+    height: 260px;
     width: 200px;
   }
   
@@ -458,7 +458,7 @@ $stops4: (
   z-index: 2;
 
   p, h3, a {
-    margin-left: 20px;
+    margin: 8px 0 8px 20px;
     font-size: 0.8rem;
     color: $white;
   }
@@ -1073,8 +1073,8 @@ html, body, #scrollerWrapper {
     .backgroundWrapper {
       will-change: transform, opacity;
       background-image: linear-gradient(
-        rgba(0, 0, 0, 0.4), 
-        rgba(0, 0, 0, 0.4)
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.6)
       ), url('../assets/images/workForUs/4.03.jpg');
       background-position: center;
     }
